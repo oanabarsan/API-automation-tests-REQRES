@@ -16,6 +16,6 @@ describe("Get single user endpoint test suite", () => {
       .expectResponseTime(3000)
       .expectBodyContains("Janet")
       .expectJsonSchema(getUserSchema)
-      .withQueryParams('id', '2');
+      .withQueryParams('id', '2'); //id of user
   });
 });
