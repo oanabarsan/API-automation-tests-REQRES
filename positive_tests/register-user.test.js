@@ -20,7 +20,7 @@ describe("Register new user endpoint test suites ", () => {
       .post(`${baseUrl}/api/register`)
       .expectStatus(200)
       .withHeaders("Content-Type", "application/json")
-      .withBearerToken(requestToken)
+      .withBearerToken(requestToken) //authorization token
       .withBody(requestBody)
       .expectResponseTime(5000);
   });
