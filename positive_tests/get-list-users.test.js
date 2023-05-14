@@ -2,7 +2,7 @@ const { spec, request } = require("pactum");
 
 const baseUrl = "https://reqres.in";
 
-const getUsersSchema = require("../data/response/get-users-pages-schema.json");
+const getUserSchema = require("../data/response/get-users-pages-schema.json");
 
 describe("Get list users page 1 and 2 endpoint test suite", () => {
   before(() => {
@@ -15,7 +15,7 @@ describe("Get list users page 1 and 2 endpoint test suite", () => {
       .expectStatus(200)
       .expectResponseTime(3000)
       .expectBodyContains("Bluth")
-      .expectJsonSchema(getUsersSchema);
+      .expectJsonSchema(getUserSchema);
   });
 
   it("Get list users page 2 test", async () => {
@@ -24,6 +24,6 @@ describe("Get list users page 1 and 2 endpoint test suite", () => {
       .expectStatus(200)
       .expectResponseTime(3000)
       .expectBodyContains("Tobias")
-      .expectJsonSchema(getUsersSchema);
+      .expectJsonSchema(getUserSchema);
   });
 });
