@@ -34,6 +34,6 @@ describe("Get single and list resources page 1 and 2 endpoint test suite", () =>
       .expectResponseTime(3000)
       .expectBodyContains("fuchsia rose")
       .expectJsonSchema(getResourceSchema)
-      .withQueryParams('id', '2');
+      .withQueryParams("id", "2");
   });
 });
