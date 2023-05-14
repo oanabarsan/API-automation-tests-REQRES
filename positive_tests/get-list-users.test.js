@@ -26,4 +26,14 @@ describe("Get list users page 1 and 2 endpoint test suite", () => {
       .expectBodyContains("Tobias")
       .expectJsonSchema(getUserSchema);
   });
+
+  it("Get single user with filter id test", async () => {
+    await spec()
+      .get(`${baseUrl}/api/users/2`) 
+      .expectStatus(200)
+      .expectResponseTime(3000)
+      .expectBodyContains("Janet")
+      .expectJsonSchema(getUserSchema)
+      .withQueryParams('id', '2');
+  });
 });
