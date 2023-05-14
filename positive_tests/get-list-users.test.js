@@ -4,7 +4,7 @@ const baseUrl = "https://reqres.in";
 
 const getUserSchema = require("../data/response/get-users-pages-schema.json");
 
-describe("Get list users page 1 and 2 endpoint test suite", () => {
+describe("Get single and list users page 1 and 2 endpoint test suite", () => {
   before(() => {
     request.setDefaultTimeout(5000);
   });
