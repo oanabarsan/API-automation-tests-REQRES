@@ -9,7 +9,7 @@ describe("Try to login new user with no data inserted in the body", () => {
 
     await spec()
       .post(`${baseUrl}/api/login`)
-      .expectStatus(400)
+      .expectStatus(400) //expected status "Pass"
   });
 });
 
@@ -25,14 +25,14 @@ describe("Try to login only with email inserted in the body", () => {
     await spec()
       .post(`${baseUrl}/api/login`)
       .withBody(requestEmail.email)
-      .expectStatus(400)
+      .expectStatus(400) //expected status "Pass"
   });
 });
 
 
-describe("Try to login only with email inserted in the body", () => {
+describe("Try to login only with password inserted in the body", () => {
   
-  it("Register new user only with email", async () => {
+  it("Register new user only with password", async () => {
 
     const requestPass = {
       password: "eve.holt@reqres.in",
@@ -41,7 +41,7 @@ describe("Try to login only with email inserted in the body", () => {
     await spec()
       .post(`${baseUrl}/api/login`)
       .withBody(requestPass.password)
-      .expectStatus(400)
+      .expectStatus(400) //expected status "Pass"
   });
 });
 
@@ -53,7 +53,7 @@ describe("Try to login with shorter response time", () => {
 
     await spec()
       .post(`${baseUrl}/api/login`)
-      .expectResponseTime(5);
+      .expectResponseTime(5); //expected status "Fail"
   });
 });
 
