@@ -15,6 +15,6 @@ describe("Delete user endpoint test suites ", () => {
       .expectStatus(204)
       .expectResponseTime(3000);
 
-    await spec().get(`${baseUrl}/api/users/${postId}`).expectStatus(404); // (for validating the previous test)
+    await spec().get(`${baseUrl}/api/users/${postId}`).expectStatus(404); // (for validating the previous method)
   });
 });
