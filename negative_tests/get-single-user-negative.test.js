@@ -7,7 +7,7 @@ describe("Try to get single user negative test with an URL that does not match t
   it("Get single user negative test with unmatched URL", async () => {
     await spec()
     .get(`${baseUrl}/api/users/23567`)
-    .expectStatus(404);
+    .expectStatus(404); //expected status "Pass"
   });
 
 });
@@ -18,7 +18,7 @@ describe("Try to get single user negative test with body contains that does not 
   it("Get single user negative test with different body contains", async () => {
     await spec()
     .get(`${baseUrl}/api/users/2`)
-    .expectBodyContains("Janel");
+    .expectBodyContains("Janel"); //expected status "Fail"
   });
 
 });
@@ -28,7 +28,7 @@ describe("Try to get single user negative test with shorter response time", () =
   it("Get single user negative test for shorter response time", async () => {
     await spec()
     .get(`${baseUrl}/api/users/2`)
-    .expectResponseTime(2);
+    .expectResponseTime(2); //expected status "Fail"
   });
 
 });
@@ -40,7 +40,7 @@ describe("Try to get single user negative test with different Json schema", () =
   it("Get single user negative test with different json schema", async () => {
     await spec()
     .get(`${baseUrl}/api/users/2`)
-    .expectJsonSchema(requestSchema);
+    .expectJsonSchema(requestSchema); //expected status "Fail"
   });
 
 });
