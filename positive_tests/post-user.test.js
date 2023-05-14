@@ -13,7 +13,7 @@ describe("Create new user endpoint test suites ", () => {
     request.setDefaultTimeout(5000);
   });
 
-  it("Create new user", async () => {
+  it("Create new user test", async () => {
     const requestBody = {
       name: "Oana Barsan",
       job: "Amazon",
