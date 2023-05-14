@@ -2,7 +2,7 @@ const { spec, request } = require("pactum");
 
 const baseUrl = "https://reqres.in";
 
-const getResourcesSchema = require("../data/response/get-resources-list-schema.json");
+const getResourceSchema = require("../data/response/get-resources-list-schema.json");
 
 describe("Get list resources page 1 and 2 endpoint test suite", () => {
   before(() => {
@@ -15,7 +15,7 @@ describe("Get list resources page 1 and 2 endpoint test suite", () => {
       .expectStatus(200)
       .expectResponseTime(3000)
       .expectBodyContains("true red")
-      .expectJsonSchema(getResourcesSchema);
+      .expectJsonSchema(getResourceSchema);
   });
 
   it("Get list resources page 2 test", async () => {
