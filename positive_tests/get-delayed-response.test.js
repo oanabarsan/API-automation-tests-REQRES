@@ -11,7 +11,7 @@ describe("Get list users with delay page 1 and 2 endpoint test suite", () => {
     await spec()
       .get(`${baseUrl}/api/users?delay=3`)
       .expectStatus(200)
-      .withQueryParams('delay', '3')
+      .withQueryParams('delay', '3') //delayed with 3 seconds
 
   });
 
@@ -19,7 +19,7 @@ describe("Get list users with delay page 1 and 2 endpoint test suite", () => {
     await spec()
       .get(`${baseUrl}/api/users?delay=3`)
       .expectStatus(200)
-      .withQueryParams('delay', '3')
+      .withQueryParams('delay', '3') //delayed with 3 seconds
 
   });
 });
