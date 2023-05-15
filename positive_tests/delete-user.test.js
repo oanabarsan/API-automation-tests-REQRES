@@ -8,10 +8,10 @@ describe("Delete user endpoint test suites ", () => {
   });
 
   it("Delete user", async () => {
-    const postId = 586;
+    const userId = 586;
 
     await spec()
-      .delete(`${baseUrl}/api/users/${postId}`)
+      .delete(`${baseUrl}/api/users/${userId}`)
       .expectStatus(204)
       .expectResponseTime(3000);
 
