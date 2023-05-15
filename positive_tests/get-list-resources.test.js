@@ -28,8 +28,10 @@ describe("Get single and list resources page 1 and 2 endpoint test suite", () =>
   });
 
   it("Get single resource test", async () => {
+
+    const resourceId = 2;
     await spec()
-      .get(`${baseUrl}/api/unknown/2`)
+      .get(`${baseUrl}/api/unknown/${resourceId}`)
       .expectStatus(200)
       .expectResponseTime(3000)
       .expectBodyContains("fuchsia rose")
