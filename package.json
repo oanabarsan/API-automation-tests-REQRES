@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "positive-tests": "npx mocha positive_tests --reporter mochawesome --reporter-options reportDir=Results_positive_tests,reportFilename=api-positive_test-results --timeout 10000",
-    "negative-tests": "npx mocha negative_tests --reporter mochawesome --reporter-options reportDir=Results_negative_tests,reportFilename=api-negative_test-results --timeout 10000"
+    "api-tests": "npx mocha tests --reporter mochawesome --reporter-options reportDir=Results_positive_tests,reportFilename=api-positive_test-results --timeout 10000"
+    
   },
   "author": "",
   "license": "ISC",

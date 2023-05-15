@@ -23,7 +23,7 @@ describe("Update existing user endpoint test suites ", () => {
       .put(`${baseUrl}/api/users/${postId}`)
       .withHeaders("Content-Type", "application/json")
       .withBody(requestBody)
-      .expectStatus(200) //name was modified from "Oana" to "Oana-Maria"
+      .expectStatus(200) 
       .expectResponseTime(3000)
       .expectBodyContains(requestBody.job)
       .withJson(requestJson);
