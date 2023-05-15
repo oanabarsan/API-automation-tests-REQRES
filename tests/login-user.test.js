@@ -29,7 +29,7 @@ describe("Register new user endpoint test suites ", () => {
 
     await spec()
       .post(`${baseUrl}/api/login`)
-      .expectStatus(400) //expected status "Pass"
+      .expectStatus(400) 
   });
 
   it("Try to login only with email inserted in the body", async () => {
@@ -41,7 +41,7 @@ describe("Register new user endpoint test suites ", () => {
     await spec()
       .post(`${baseUrl}/api/login`)
       .withBody(requestEmail.email)
-      .expectStatus(400) //expected status "Pass"
+      .expectStatus(400) 
   });
 
   it("Try to login only with password inserted in the body", async () => {
@@ -53,6 +53,8 @@ describe("Register new user endpoint test suites ", () => {
     await spec()
       .post(`${baseUrl}/api/login`)
       .withBody(requestPass.password)
-      .expectStatus(400) //expected status "Pass"
+      .expectStatus(400) 
   });
 });
+
+
