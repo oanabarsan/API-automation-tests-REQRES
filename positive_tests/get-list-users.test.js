@@ -28,8 +28,11 @@ describe("Get single and list users page 1 and 2 endpoint test suite", () => {
   });
 
   it("Get single user with filter id test", async () => {
+
+    const userId = 2;
+
     await spec()
-      .get(`${baseUrl}/api/users/2`) 
+      .get(`${baseUrl}/api/users/${userId}`) 
       .expectStatus(200)  //with filter id=2;
       .expectResponseTime(3000)
       .expectBodyContains("Janet")
