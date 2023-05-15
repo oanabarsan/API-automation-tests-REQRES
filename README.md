@@ -1,2 +1,2 @@
 # API-automation-tests
-In this repository are found positive and negative automated tests for API methods from REQRES.IN
+Automation tests for fake api from https://reqres.in
