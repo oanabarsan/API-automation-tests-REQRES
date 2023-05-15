@@ -2,7 +2,9 @@ const { spec, request } = require("pactum");
 
 const baseUrl = "https://reqres.in";
 
-const getResourceSchema = require("../data/response/get-resources-list-schema.json");
+const getResourceListSchema = require("../data/response/get-resources-list-schema.json");
+
+const getSingleResourceSchema = require("../data/response/get-single-resource-schema.json");
 
 describe("Get single and list resources page 1 and 2 endpoint test suite", () => {
   before(() => {
@@ -15,7 +17,7 @@ describe("Get single and list resources page 1 and 2 endpoint test suite", () =>
       .expectStatus(200)
       .expectResponseTime(3000)
       .expectBodyContains("true red")
-      .expectJsonSchema(getResourceSchema);
+      .expectJsonSchema(getResourceListSchema);
   });
 
   it("Get list resources page 2 test", async () => {
@@ -24,7 +26,7 @@ describe("Get single and list resources page 1 and 2 endpoint test suite", () =>
       .expectStatus(200)
       .expectResponseTime(3000)
       .expectBodyContains("blue iris")
-      .expectJsonSchema(getResourcesSchema);
+      .expectJsonSchema(getResourceListSchema);
   });
 
   it("Get single resource test", async () => {
@@ -36,7 +38,7 @@ describe("Get single and list resources page 1 and 2 endpoint test suite", () =>
       .expectStatus(200)
       .expectResponseTime(3000)
       .expectBodyContains("fuchsia rose")
-      .expectJsonSchema(getResourceSchema)
+      .expectJsonSchema(getSingleResourceSchema)
       .withQueryParams("id", "2");
   });
 });

@@ -2,7 +2,9 @@ const { spec, request } = require("pactum");
 
 const baseUrl = "https://reqres.in";
 
-const getUserSchema = require("../data/response/get-users-pages-schema.json");
+const getListUsersSchema = require("../data/response/get-users-pages-schema.json");
+
+const getSingleUserSchema = require("../data/response/get-single-user-schema.json");
 
 describe("Get single and list users page 1 and 2 endpoint test suite", () => {
   before(() => {
@@ -15,7 +17,7 @@ describe("Get single and list users page 1 and 2 endpoint test suite", () => {
       .expectStatus(200)
       .expectResponseTime(3000)
       .expectBodyContains("Bluth")
-      .expectJsonSchema(getUserSchema);
+      .expectJsonSchema(getListUsersSchema);
   });
 
   it("Get list users page 2 test", async () => {
@@ -24,7 +26,7 @@ describe("Get single and list users page 1 and 2 endpoint test suite", () => {
       .expectStatus(200)
       .expectResponseTime(3000)
       .expectBodyContains("Tobias")
-      .expectJsonSchema(getUserSchema);
+      .expectJsonSchema(getListUsersSchema);
   });
 
   it("Get single user with filter id test", async () => {
@@ -36,7 +38,7 @@ describe("Get single and list users page 1 and 2 endpoint test suite", () => {
       .expectStatus(200)  //with filter id=2;
       .expectResponseTime(3000)
       .expectBodyContains("Janet")
-      .expectJsonSchema(getUserSchema)
+      .expectJsonSchema(getSingleUserSchema)
       .withQueryParams('id', '2');
   });
 });
