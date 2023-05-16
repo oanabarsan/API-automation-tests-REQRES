@@ -1,11 +1,8 @@
 const { spec, request } = require("pactum");
 
-const baseUrl = "https://reqres.in";
+const { faker } = require("@faker-js/faker");
 
-const requestJson = {
-  "name": "Oana Barsan",
-  "job": "Amazon",
-};
+const baseUrl = "https://reqres.in";
 
 describe("Create new user endpoint test suites ", () => {
 
@@ -14,10 +11,15 @@ describe("Create new user endpoint test suites ", () => {
   });
 
   it("Create new user test", async () => {
+
+    const randomJob = faker.person.jobTitle();
+
     const requestBody = {
       name: "Oana Barsan",
-      job: "Amazon",
+      job: randomJob,
     };
+
+     console.log(randomJob);
 
     await spec()
       .post(`${baseUrl}/api/users`)
@@ -25,8 +27,7 @@ describe("Create new user endpoint test suites ", () => {
       .withHeaders("Content-Type", "application/json")
       .withBody(requestBody)
       .expectResponseTime(3000)
-      .expectBodyContains(requestBody.name)
-      .withJson(requestJson)
+      .expectBodyContains(randomJob);
       
   });
 });
